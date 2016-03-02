@@ -1,6 +1,7 @@
 //============================================================================
 // Name        : Example_1_OOP.cpp
-// Author      : Stefan Angelov(cefothe)
+// Author      : Velko Ilchev - TU PLOVDIV
+// Editor	   : Stefan Angelov(cefothe)
 // Version     :
 // Copyright   : 
 // Description : Electronic notebook
