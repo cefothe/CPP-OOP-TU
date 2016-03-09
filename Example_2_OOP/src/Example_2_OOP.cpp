@@ -3,7 +3,7 @@
 // Author      : Stefan Angelov(cefothe)
 // Version     :
 // Copyright   : 
-// Description : Hello World in C++, Ansi-style
+// Description : Simple Banking System
 //============================================================================
 #include <stdio.h>
 #include <string.h>
