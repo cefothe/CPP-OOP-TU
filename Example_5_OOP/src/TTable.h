@@ -16,8 +16,8 @@ class TTable{
 protected:
 	void refactoring();
 public:
-	TTable(void){countOfWord=0;};
-	TRow* search(string searchWord);
+	TTable(void){countOfWord=-1;};
+	TRow* search(string searchWord, int *counter);
 	void add(string bulgarian, string english);
 	void deleteWord(string searchWord);
 	void printTable();

@@ -12,7 +12,6 @@ using namespace std;
 
 struct WordCounter{
 	string* words;
-	int countOfWords;
 };
 
 

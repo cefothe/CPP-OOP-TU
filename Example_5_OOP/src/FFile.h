@@ -12,8 +12,9 @@ using namespace std;
 
 class FFile{
 public:
-	WordCounter* open(string fileName);
-	void write(string fileName, WordCounter* words);
+	WordCounter* open(string fileName,  int *numberOfWord);
+	void write(string fileName, WordCounter* words, int numberOfwords);
+	TTable* writeDictualy(string fileName, TRow* dictualy, int numberOfwords);
 };
 
 #endif /* FFILE_H_ */
