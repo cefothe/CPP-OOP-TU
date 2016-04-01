@@ -16,8 +16,7 @@ using namespace std;
 
 WordCounter* FFile::open(string fileName, int *numberOfWord){
 
-	WordCounter* words = new WordCounter[100];
-
+	WordCounter* words= new WordCounter[10];
 	string str; //temp variable
 	ifstream myfile (fileName.c_str());
 	  if (myfile.is_open())
@@ -47,7 +46,7 @@ void FFile::write(string fileName, WordCounter *words, int *numberOfwords){
 	  else cout << "Unable to open file";
 }
 
-TTable FFile::writeDictualy(string fileName, int *numberOfwords){
+TDihotTable FFile::writeDictualy(string fileName, int *numberOfwords){
 
 	string str; //temp variable
 
@@ -55,7 +54,7 @@ TTable FFile::writeDictualy(string fileName, int *numberOfwords){
 	string english; //bulgarian variable
 
 	char* array;
-	TTable table;
+	TDihotTable table;
 	ifstream myfile (fileName.c_str());
 	if(myfile.is_open()){
 		int flag = 0;

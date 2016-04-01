@@ -8,8 +8,9 @@
 #include "FFile.h"
 #include <string.h>
 #include <iostream>
+
+#include "TDihotTable.h"
 #include "WordCounter.h"
-#include "TTable.h"
 #include "TRow.h"
 using namespace std;
 
@@ -19,7 +20,7 @@ int main() {
 	int numberOFInputElement=0;
 	int numberOfDictualyWord=0;
 	WordCounter* inputfile = file.open("input.txt",&numberOFInputElement);
-	TTable table= file.writeDictualy("dictianaly.txt", &numberOfDictualyWord);
+	TDihotTable table= file.writeDictualy("dictianaly.txt", &numberOfDictualyWord);
 	WordCounter* outputFile = new WordCounter[100];
 	for(int i=0; i< numberOFInputElement;i++){
 		int counter;

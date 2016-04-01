@@ -5,23 +5,23 @@
  *      Author: cefothe
  */
 
-#ifndef TTABLE_H_
-#define TTABLE_H_
+#ifndef TDIHOTTABLE_H_
+#define TDIHOTTABLE_H_
 #include "TRow.h"
 #include "string"
 using namespace std;
 
-class TTable{
-	TRow rows[100];
+class TDihotTable{
+	TRow rows[10];
 	int countOfWord;
-protected:
-	void refactoring();
 public:
-	TTable(void){countOfWord=-1;};
+	TDihotTable(void){countOfWord=0;};
+	void refactoring(int start, int end);
 	TRow* search(string searchWord, int *counter);
+	bool binarySearch(string searchWord, int start, int end, int *currentPossiton);
 	void add(string bulgarian, string english);
 	void deleteWord(string searchWord);
 	void printTable();
 };
 
-#endif /* TTABLE_H_ */
+#endif /* TDIHOTTABLE_H_ */
