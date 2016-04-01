@@ -36,7 +36,7 @@ void TTable::deleteWord(string searchWord){
 	if(rows!=NULL){
 		for(; i < countOfWord; ++i)
 		{
-			TRow[i] = TRow[i+1];
+			rows[i] = rows[i+1];
 		};
 		if(i!=counter){
 		countOfWord--;}

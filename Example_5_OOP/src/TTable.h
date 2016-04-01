@@ -7,7 +7,8 @@
 
 #ifndef TTABLE_H_
 #define TTABLE_H_
-
+#include "TRow.h"
+#include "string"
 using namespace std;
 
 class TTable{

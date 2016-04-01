@@ -7,11 +7,12 @@
 
 #ifndef WORDCOUNTER_H_
 #define WORDCOUNTER_H_
+#include <string>
 
 using namespace std;
 
 struct WordCounter{
-	string* words;
+	string words;
 };
 
 
