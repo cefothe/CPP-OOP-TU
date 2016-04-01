@@ -16,11 +16,10 @@ using namespace std;
 int main() {
 
 	FFile file;
-	TTable table;
 	int numberOFInputElement=0;
 	int numberOfDictualyWord=0;
 	WordCounter* inputfile = file.open("input.txt",&numberOFInputElement);
-	table= file.writeDictualy("dictianaly.txt", &numberOfDictualyWord);
+	TTable table= file.writeDictualy("dictianaly.txt", &numberOfDictualyWord);
 	WordCounter* outputFile = new WordCounter[100];
 	for(int i=0; i< numberOFInputElement;i++){
 		int counter;
