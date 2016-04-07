@@ -43,17 +43,17 @@ TRow* TDihotTable::search(string bulgarian, int* counter){
 }
 
 bool TDihotTable::binarySearch(string searchWord, int start, int end, int* currentPossition){
-	if(start>=end){
-		*currentPossition = end;
+	if(start>end){
+		*currentPossition = start;
 		return false;
 	}else
 	if(searchWord.compare(rows[(start+end)/2].bulgarian)==0){
 		*currentPossition = (start+end)/2;
 		return true;
 	}else if(searchWord.compare(rows[(start+end)/2].bulgarian)<0){
-		binarySearch(searchWord, start,(start+end)/2, currentPossition);
+		binarySearch(searchWord, start,(start+end)/2-1, currentPossition);
 	}else if(searchWord.compare(rows[(start+end)/2].bulgarian)>0){
-		binarySearch(searchWord, (start+end)/2,end, currentPossition);
+		binarySearch(searchWord, (start+end)/2+1,end, currentPossition);
 	}
 
 }
