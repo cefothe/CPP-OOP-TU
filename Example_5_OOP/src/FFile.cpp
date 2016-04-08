@@ -47,7 +47,7 @@ void FFile::write(string fileName, WordCounter *words, int *numberOfwords){
 	  else cout << "Unable to open file";
 }
 
-TTable FFile::writeDictualy(string fileName, int *numberOfwords){
+TBinTree* FFile::writeDictualy(string fileName, int *numberOfwords){
 
 	string str; //temp variable
 
@@ -55,7 +55,7 @@ TTable FFile::writeDictualy(string fileName, int *numberOfwords){
 	string english; //bulgarian variable
 
 	char* array;
-	TTable table;
+	TBinTree *table=NULL;
 	ifstream myfile (fileName.c_str());
 	if(myfile.is_open()){
 		int flag = 0;
@@ -66,7 +66,10 @@ TTable FFile::writeDictualy(string fileName, int *numberOfwords){
 				flag++;
 			}else{
 				english =str;
-				table.add(bulgarian,english);
+				TRow row;
+				row.bulgarian=bulgarian;
+				row.english=english;
+				TBinTree::insert(row,&table);
 				flag= 0;
 			}
 

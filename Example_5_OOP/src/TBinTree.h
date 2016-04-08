@@ -9,6 +9,7 @@
 #define TBINTREE_H_
 #include <iostream>
 #include <string>
+#include "TRow.h"
 using namespace std;
 
 class TBinTree{
@@ -16,10 +17,15 @@ class TBinTree{
 	TBinTree *left;
 	TBinTree *right;
 public:
-	TBinTree *search (string searchWord, TBinTree *binTable);
-	void insert(TRow row, TBinTree **binTable);
+	static TRow *search (string searchWord, TBinTree *binTable);
+	TBinTree(TRow rowParam){
+		row = rowParam;
+		left= NULL;
+		right = NULL;
+	}
+	static void insert(TRow row, TBinTree **binTable);
 	void deleteEl(TRow row, TBinTree **binTable);
-	void printTable(TBinTree **binTable);
+	static void printTable(TBinTree *binTable);
 };
 
 

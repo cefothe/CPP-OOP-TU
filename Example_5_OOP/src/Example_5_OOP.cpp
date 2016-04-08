@@ -9,7 +9,7 @@
 #include <string.h>
 #include <iostream>
 #include "WordCounter.h"
-#include "TTable.h"
+#include "TBinTree.h"
 #include "TRow.h"
 using namespace std;
 
@@ -19,13 +19,15 @@ int main() {
 	int numberOFInputElement=0;
 	int numberOfDictualyWord=0;
 	WordCounter* inputfile = file.open("input.txt",&numberOFInputElement);
-	TTable table= file.writeDictualy("dictianaly.txt", &numberOfDictualyWord);
+	TBinTree* table= file.writeDictualy("dictianaly.txt", &numberOfDictualyWord);
 	WordCounter* outputFile = new WordCounter[100];
 	for(int i=0; i< numberOFInputElement;i++){
 		int counter;
-		TRow* row =table.search(inputfile[i].words,&counter);
+		TBinTree::search(inputfile[i].words,table);
+		TRow *row =TBinTree::search(inputfile[i].words,table);
 		outputFile[i].words=row->english;
 	}
+	TBinTree::printTable(table);
 	file.write("output.txt",outputFile,&numberOFInputElement);
 	return 0;
 }
